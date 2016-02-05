@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "password": "password",
+  "progressBar": {
+    "1": "Control Valves",
+    "2": "Control Turbo Pump",
+    "3": "Control Flow Controllers",
+    "4": "Control Misc"
+  }
+}

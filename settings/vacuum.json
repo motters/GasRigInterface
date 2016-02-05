@@ -1,0 +1,10 @@
+{
+  "enabled": false,
+  "password": false,
+  "progressBar": {
+    "1": "Select Usage",
+    "2": "Viles connect",
+    "3": "Vacuuming",
+    "4": "Detach Vile"
+  }
+}
