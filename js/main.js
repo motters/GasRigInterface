@@ -173,5 +173,7 @@ var UI = {
 
 $( document ).ready(function() {
     UI.init();
+    // Keyboard
+    $('.osk-trigger').onScreenKeyboard();
 });
 
