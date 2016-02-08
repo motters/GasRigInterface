@@ -55,6 +55,27 @@ var UI = {
                     // Show password box
                     $('#password-wrapper').addClass('required');
 
+                    // Enable on screen keyboard for password field
+                    $('#password_textbox').keyboard({
+                        layout: 'custom',
+                        customLayout : {
+                            'normal': [
+                                '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+                                'q w e r t y u i o p [ ] \\',
+                                'a s d f g h j k l ; \' {accept}',
+                                '{shift} z x c v b n m , . / {shift}',
+                                '{accept} {space} {cancel}'
+                            ],
+                            'shift': [
+                                '~ ! @ # $ % ^ & * ( ) _ + {bksp}',
+                                'Q W E R T Y U I O P { } |',
+                                'A S D F G H J K L : " {accept}',
+                                '{shift} Z X C V B N M < > ? {shift}',
+                                '{accept} {space} {cancel}'
+                            ]
+                        }
+                    });
+
                     // Login
                     $('#password_textbox').keypress(function (e) {
                         var key = e.which;
@@ -173,7 +194,6 @@ var UI = {
 
 $( document ).ready(function() {
     UI.init();
-    // Keyboard
-    $('.osk-trigger').onScreenKeyboard();
+
 });
 
