@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="css/password.css">
     <link href="css/plugins/keyboard/keyboard.css" rel="stylesheet">
     <link href="css/plugins/keyboard/keyboard-dark.css" rel="stylesheet">
+    <link href="css/alerts.css" rel="stylesheet">
+    <link href="css/status-box.css" rel="stylesheet">
+    <link href="css/plugins/font-awesome/font-awesome.css" rel="stylesheet">
     <title>Gas Rig Control</title>
 </head>
 <body>
@@ -32,8 +35,11 @@
                 <h3 class="fs-subtitle">The rig can perform multiple functions, select how you want to use it.</h3>
                 <h3 class="fs-subtitle">Please ensure you are trained on the selected function!</h3>
                 <h3 class="fs-subtitle">Once you select an option you will be guided through step by step.</h3>
-                <div id="method-disabled" class="method-disabled alert alert-danger" >
-                    Sorry but this method is currently disabled, please talk to the employee in charged.
+                <div id="method-disabled" class="method-disabled" style="margin-top: 40px; margin-bottom: 30px;">
+                    <div class="update-nag">
+                        <div class="update-split update-danger"><i class="glyphicon glyphicon-refresh"></i></div>
+                        <div class="update-text">Sorry but this method is currently disabled, please talk to the employee in charged.</div>
+                    </div>
                 </div>
                 <p>
                     <button name="next" class="next action-button selection-button method" data-method="vacuum">Vacuum Station <small>Vac your vile or viles down to a set vacuum level.</small></button>

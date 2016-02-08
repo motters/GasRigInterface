@@ -1,10 +1,9 @@
 {
   "enabled": true,
-  "password": "password",
+  "password": false,
   "progressBar": {
-    "1": "Control Valves",
-    "2": "Control Turbo Pump",
-    "3": "Control Flow Controllers",
-    "4": "Control Misc"
+    "1": "Select Usage",
+    "2": "Test System",
+    "3": "Set Configurations"
   }
 }
