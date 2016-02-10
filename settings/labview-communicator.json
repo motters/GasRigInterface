@@ -1,0 +1,18 @@
+{
+  "url": "localhost::8000",
+  "method": "POST",
+  "submit": {
+    "pressure": "set/pressure",
+    "valve": "set/valve_config",
+    "flow": "set/flow",
+    "user_interface": "set/user_interface"
+  },
+  "retrieve": {
+    "pressure_sensor": "read/pressure",
+    "vacuum_sensor": "read/vacuum",
+    "turbo_speed": "read/turbo_speed",
+    "valve": "read/valve_config",
+    "flow": "read/flow",
+    "vacuum_station": "read/vacuum_station"
+  }
+}

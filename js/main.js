@@ -122,6 +122,10 @@ var UI = {
             $('section[data-stage="welcome"]').hide("slow");
             $('section[data-stage="'+ $.method+'-'+ $.stage+'"]').show( "slow" );
 
+            // Load the controller
+            var controller = $.method.replace('-', '_');
+            window[controller].init();
+
             // Check for when user selects next stage
             UI.selectedNext();
 
@@ -194,6 +198,5 @@ var UI = {
 
 $( document ).ready(function() {
     UI.init();
-
 });
 
