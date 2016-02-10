@@ -10,7 +10,7 @@
                 <span class="text">Pressure</span>
             </div>
             <div class="info">
-                <h2 class="title">Pressure Sensor</h2>
+                <h2 class="title">Sensor</h2>
                 <p class="desc">0.9 Bar</p>
             </div>
         </div>
@@ -21,29 +21,29 @@
                 <span class="text">Pressure</span>
             </div>
             <div class="info">
-                <h2 class="title">Vacuum Pressure</h2>
+                <h2 class="title">Vacuum</h2>
                 <p class="desc">0.8 Bar</p>
             </div>
         </div>
 
         <div class="col-lg-3 col-lg-offset-1">
             <div class="item">
-                <span class="icon"><i class="fa fa-cloud"></i></span>
-                <span class="text">Vent</span>
+                <span class="icon"><i class="fa fa-certificate"></i></span>
+                <span class="text">Speed</span>
             </div>
             <div class="info">
-                <h2 class="title">Vent to Air (Warning)</h2>
-                <p class="desc">No venting to air with current valve setup.</p>
+                <h2 class="title">Turbo</h2>
+                <p class="desc">0 RPM</p>
             </div>
         </div>
 
         <div class="col-lg-3" style="margin-left: 4.16666666665%;">
             <div class="item">
                 <span class="icon"><i class="fa fa-exchange"></i></span>
-                <span class="text">Flow (1)</span>
+                <span class="text">Flow Rate</span>
             </div>
             <div class="info">
-                <h2 class="title">Current Flow Rate</h2>
+                <h2 class="title">Flow (1)</h2>
                 <p class="desc">0.3 ml/m (Set 0.3 ml/m)</p>
             </div>
         </div>
@@ -51,35 +51,60 @@
         <div class="col-lg-3 col-lg-offset-1">
             <div class="item">
                 <span class="icon"><i class="fa fa-exchange"></i></span>
-                <span class="text">Flow (2)</span>
+                <span class="text">Flow Rate</span>
             </div>
             <div class="info">
-                <h2 class="title">Current Flow Rate</h2>
+                <h2 class="title">Flow (2)</h2>
                 <p class="desc">1.5 ml/m (Set 1.5 ml/m)</p>
             </div>
         </div>
 
         <div class="col-lg-3 col-lg-offset-1">
             <div class="item">
-                <span class="icon"><i class="fa fa-exchange"></i></span>
-                <span class="text">RS485</span>
+                <span class="icon"><i class="fa fa-usb"></i></span>
+                <span class="text">Connection</span>
             </div>
             <div class="info">
-                <h2 class="title">Connection Errors</h2>
+                <h2 class="title">Connection</h2>
                 <p class="desc">Everything is ok.</p>
             </div>
         </div>
 
-        <div class="col-lg-11" style="margin-left: 4.16666666665%;">
+        <div class="col-lg-3" style="margin-left: 4.16666666665%;">
             <div class="item">
+                <span class="icon"><i class="fa fa-cloud"></i></span>
+                <span class="text">Vent</span>
+            </div>
+            <div class="info">
+                <h2 class="title">Vent to Air</h2>
+                <p class="desc">No venting to air with current valve setup.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-7 col-lg-offset-1" style=" height: 110px;">
+            <div class="item" style="height: 110px;">
                 <span class="icon"><i class="fa fa-toggle-off"></i></span>
                 <span class="text">Valves</span>
             </div>
-            <div class="info">
+            <div class="info"  style="height: 110px;">
                 <h2 class="title">Status of Each Valve</h2>
-                <p class="desc">V1</p>
+                <div class="desc">
+                    <div class="row">
+                        <div class="col-lg-3">V1 = Open, </div>
+                        <div class="col-lg-3">V2 = closed, </div>
+                        <div class="col-lg-3">V3 = closed, </div>
+                        <div class="col-lg-3">V4 = closed, </div>
+                        <div class="col-lg-3">V5 = closed, </div>
+                        <div class="col-lg-3">V6 = closed, </div>
+                        <div class="col-lg-3">V7 = closed, </div>
+                        <div class="col-lg-3">V8 = closed, </div>
+                        <div class="col-lg-3">V9 = closed </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
 
 
@@ -89,16 +114,214 @@
             <li role="presentation"><a href="#vacuum" aria-controls="vacuum" role="tab" data-toggle="tab">Test Vacuum</a></li>
             <li role="presentation"><a href="#flow_controller" aria-controls="flow_controller" role="tab" data-toggle="tab">Test Flow Controllers</a></li>
             <li role="presentation"><a href="#sequence" aria-controls="sequence" role="tab" data-toggle="tab">Set Sequence</a></li>
+            <li role="presentation"><a href="#ui_control" aria-controls="ui_control" role="tab" data-toggle="tab">UI Control</a></li>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="valves">...</div>
-            <div role="tabpanel" class="tab-pane" id="vacuum">...</div>
-            <div role="tabpanel" class="tab-pane" id="flow_controller">...</div>
-            <div role="tabpanel" class="tab-pane" id="sequence">...</div>
+            <div role="tabpanel" class="tab-pane active" id="valves">
+                <div class="" style="margin-top: 20px; width:100%">
+                    <h4 class="text-left">Set Valve State <small>Check for open</small></h4>
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-1" class="styled" type="checkbox" checked>
+                                    <label for="valve-1">
+                                        Valve 1
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-2" class="styled" type="checkbox" style="margin-left: 30px;">
+                                    <label for="valve-2">
+                                        Valve 2
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-3" class="styled" type="checkbox" >
+                                    <label for="valve-3">
+                                        Valve 3
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-4" class="styled" type="checkbox">
+                                    <label for="valve-4">
+                                        Valve 4
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-5" class="styled" type="checkbox">
+                                    <label for="valve-5">
+                                        Valve 5
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-6" class="styled" type="checkbox">
+                                    <label for="valve-6">
+                                        Valve 6
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-7" class="styled" type="checkbox">
+                                    <label for="valve-7">
+                                        Valve 7
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-8" class="styled" type="checkbox">
+                                    <label for="valve-8">
+                                        Valve 8
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="form-group pull-left">
+                                <div class="checkbox checkbox-success">
+                                    <input id="valve-9" class="styled" type="checkbox">
+                                    <label for="valve-9">
+                                        Valve 9
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"><button name="update-valves" class="action-button pull-left danger" style="width: auto; font-size: 12px; padding-left: 10px; padding-right: 10px; margin-top: -10px; margin-left: 15px;">Update Valves</button></div>
+                </div>
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="vacuum">
+                <div class="text-left" style="margin-top: 20px; width:100%">
+                    <h4>Control Vacuum Station <small>ENSURE THERE IS NO VENT TO AIR</small></h4>
+                    <div class="row" style="margin-top: 20px;">
+                        <button name="update-valves" class="action-button pull-left danger btn-form" style="">Turn Vacuum Station ON</button>
+                        <button name="update-valves" class="action-button pull-left btn-form" style="">Turn Vacuum Station OFF</button>
+                        <button name="update-valves" class="action-button pull-left btn-form" style="">Disable Turbo Pump</button>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="flow_controller">
+                <div class="text-left row" style="margin-top: 20px;">
+                    <div class="col-lg-6">
+                        <h4>Set Flow Rate (1)</h4>
+                        <div class="row" style="margin-top: 10px;">
+                            <input type="text" name="flow_rate_1" id="flow_rate_1" placeholder="0" class="osk-trigger" style="margin-left: 15px; margin-bottom: 15px; width: 50%;"/><br/>
+                            <button name="update-valves" class="action-button pull-left btn-form" style="">Set Flow Rate</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>Set Flow Rate (2)</h4>
+                        <div class="row" style="margin-top: 10px;">
+                            <input type="text" name="flow_rate_2" id="flow_rate_2" placeholder="0" class="osk-trigger" style="margin-left: 15px; margin-bottom: 15px; width: 50%;"/><br/>
+                            <button name="update-valves" class="action-button pull-left btn-form" style="">Set Flow Rate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="sequence">
+                <div style="margin-top: 40px; margin-bottom: 30px;">
+                    <div class="update-nag">
+                        <div class="update-split update-danger"><i class="glyphicon glyphicon-refresh"></i></div>
+                        <div class="update-text">Currently there are no set sequences that can be executed.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="ui_control">
+                <div class="text-left" style="margin-top: 20px; width:100%">
+                    <h4>Disable Modes <small>Leave password field blank to fully disable or add password for password access into mode</small></h4>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-lg-6 form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">One Gas</div>
+                                    <div class="input-group-addon">
+                                        <div class="form-group">
+                                            <div class="checkbox checkbox-success" style="padding-left: 10px;">
+                                                <input id="one_gas_disabled" name="one_gas_disabled" class="styled" type="checkbox" style="position: fixed;">
+                                                <label for="one_gas_disabled">
+                                                    Disabled?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="disable_one_gas_password" id="disable_one_gas_password" class="form-control osk-trigger" placeholder="Password Access?"/><br/>
+                                </div>
+                            </div>
+                            <button name="one_gas_disable_btn" id="one_gas_disable_btn" class="action-button btn-form" style="">Update</button>
+                        </div>
+                        <div class="col-lg-6 form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Vac Station</div>
+                                    <div class="input-group-addon">
+                                        <div class="form-group">
+                                            <div class="checkbox checkbox-success" style="padding-left: 10px;">
+                                                <input id="vac_disabled" name="vac_disabled" class="styled" type="checkbox" style="position: fixed;">
+                                                <label for="vac_disabled">
+                                                    Disabled?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="disable_vac_password" id="disable_vac_password" class="form-control osk-trigger" placeholder="Password Access?"/><br/>
+                                </div>
+                            </div>
+                            <button name="disable_vac_btn" id="disable_vac_btn" class="action-button btn-form" style="">Update</button>
+                        </div>
+                        <div class="col-lg-6 form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Two Gas</div>
+                                    <div class="input-group-addon">
+                                        <div class="form-group">
+                                            <div class="checkbox checkbox-success" style="padding-left: 10px;">
+                                                <input id="two_gas_disabled" name="two_gas_disabled" class="styled" type="checkbox" style="position: fixed;">
+                                                <label for="two_gas_disabled">
+                                                    Disabled?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="disable_one_gas_password" id="disable_two_gas_password" class="form-control osk-trigger" placeholder="Password Access?"/><br/>
+                                </div>
+                            </div>
+                            <button name="one_gas_disable_btn" id="two_gas_disable_btn" class="action-button btn-form" style="">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-
-
-    <button name="next" class="next action-button selection-button next-stage" data-to="2">Proceed to next stage</button>
 </section>

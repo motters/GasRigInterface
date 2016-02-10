@@ -87,6 +87,20 @@ input, textarea {
     font-weight: 200;
     display: block;
 }
+.action-button.danger {
+    background: #ac2925;
+}
+.action-button.danger:hover, .action-button.danger:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #d43f3a;
+}
+.btn-form{
+    width: auto;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -10px;
+    margin-left: 15px;
+}
 /*headings*/
 .fs-title {
     /*font-size: 15px;*/
@@ -184,4 +198,8 @@ input, textarea {
     margin-left: -30px;
     margin-right: -30px;
     border-radius: 0px;
+}
+
+.textbox-form{
+    margin-left: 15px; margin-bottom: 15px; width: 50%;
 }
