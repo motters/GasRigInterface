@@ -6,17 +6,41 @@ var labview_communicator = {
     /**
      * Read the set flow rate for the flow controller
      */
-    setFlowRate: function()
+    setFlowRate: function(id, flow)
     {
 
     },
 
     /**
-     * Read the set vacuum rate
+     * Turn on the vac pump
      */
-    setVacuum: function()
+    setVacuumOn: function()
     {
+        console.log("vac station on");
+    },
 
+    /**
+     * Turn on the vac pump
+     */
+    setVacuumOff: function()
+    {
+        console.log("vac station off");
+    },
+
+    /**
+     * Turn off the vac turbo pump
+     */
+    setTurboOff: function()
+    {
+        console.log("vac station turbo pump off");
+    },
+
+    /**
+     * Turn on the vac turbo pump
+     */
+    setTurboOn: function()
+    {
+        console.log("vac station turbo pump on");
     },
 
     /**
@@ -30,9 +54,9 @@ var labview_communicator = {
     /**
      * Read the valve configuration
      */
-    setValveConfig: function()
+    setValveConfig: function(hash)
     {
-
+        console.log(hash);
     },
 
 
@@ -76,9 +100,10 @@ var labview_communicator = {
 
     },
 
-    submit: function(action)
+    submit: function()
     {
-
+        //$.post( "http://127.0.0.1:8080/GasRig/set/valve_config", { valveHash: "0,0,0,0,0,0,0,0,0", csfr: "poiuytrewqadfghjklmnb" } );
+        $.post( "http://127.0.0.1:8080/GasRig/set/valve_config", { valveHash: "0,58,1,0,0,0,0,0,0", csfr: "poiuytrewqadfghjklmnb" }).done(function( data ) { alert( "Data Loaded: " + data ); });
     }
 }
 
