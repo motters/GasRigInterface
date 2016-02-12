@@ -203,3 +203,15 @@ input, textarea {
 .textbox-form{
     margin-left: 15px; margin-bottom: 15px; width: 50%;
 }
+
+.error-label{
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    margin-left: 15px;
+    color: #8b0302;
+}
+
+.txt-success{
+    color: #008800;
+}

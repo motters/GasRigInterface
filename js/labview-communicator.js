@@ -8,7 +8,8 @@ var labview_communicator = {
      */
     setFlowRate: function(id, flow)
     {
-
+        console.log("Flow rate on id " + id + " is set to " + flow);
+        return true;
     },
 
     /**
@@ -17,6 +18,7 @@ var labview_communicator = {
     setVacuumOn: function()
     {
         console.log("vac station on");
+        return true;
     },
 
     /**
@@ -25,6 +27,7 @@ var labview_communicator = {
     setVacuumOff: function()
     {
         console.log("vac station off");
+        return true;
     },
 
     /**
@@ -33,6 +36,7 @@ var labview_communicator = {
     setTurboOff: function()
     {
         console.log("vac station turbo pump off");
+        return true;
     },
 
     /**
@@ -41,14 +45,7 @@ var labview_communicator = {
     setTurboOn: function()
     {
         console.log("vac station turbo pump on");
-    },
-
-    /**
-     * Read the set pressure level
-     */
-    setPressure: function()
-    {
-
+        return true;
     },
 
     /**
@@ -57,15 +54,16 @@ var labview_communicator = {
     setValveConfig: function(hash)
     {
         console.log(hash);
+        return true;
     },
 
 
     /**
      * Read the actual flow rate
      */
-    flowRate: function()
+    flowRate: function(id)
     {
-
+        return Math.floor(Math.random() * 6) + 1;
     },
 
     /**
@@ -73,7 +71,7 @@ var labview_communicator = {
      */
     vacuum: function()
     {
-
+        return 0.99;
     },
 
     /**
@@ -81,7 +79,7 @@ var labview_communicator = {
      */
     pressure: function()
     {
-
+        return 2.45;
     },
 
     /**
@@ -89,7 +87,7 @@ var labview_communicator = {
      */
     turboSpeed: function()
     {
-
+        return 0;
     },
 
     /**
@@ -97,7 +95,17 @@ var labview_communicator = {
      */
     valveConfig: function()
     {
+        // temp set fake json as if from lab view
+        var serial = '{ "1": 1, "2": 1, "3": 0, "4": 1, "5": 0, "6": 1, "7": 0, "8": 0, "9": 0 }';
+        return $.parseJSON(serial);
+    },
 
+    /**
+     * Read the turbo speed on the vacuum station
+     */
+    connectionErrors: function()
+    {
+        return 1;
     },
 
     submit: function()

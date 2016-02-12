@@ -11,7 +11,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Sensor</h2>
-                <p class="desc">0.9 Bar</p>
+                <p class="desc" id="pressure-sensor-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Vacuum</h2>
-                <p class="desc">0.8 Bar</p>
+                <p class="desc" id="turbo-pressure-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Turbo</h2>
-                <p class="desc">0 RPM</p>
+                <p class="desc" id="turbo-speed-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Flow (1)</h2>
-                <p class="desc">0.3 ml/m (Set 0.3 ml/m)</p>
+                <p class="desc" id="flow-one-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -55,7 +55,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Flow (2)</h2>
-                <p class="desc">1.5 ml/m (Set 1.5 ml/m)</p>
+                <p class="desc" id="flow-two-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -66,7 +66,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Connection</h2>
-                <p class="desc">Everything is ok.</p>
+                <p class="desc" id="connections-message-box"><i>Connecting...</i></p>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
             </div>
             <div class="info">
                 <h2 class="title">Vent to Air</h2>
-                <p class="desc">No venting to air with current valve setup.</p>
+                <p class="desc" id="vent-box-message">No venting to air with current valve setup.</p>
             </div>
         </div>
 
@@ -89,16 +89,16 @@
             <div class="info"  style="height: 110px;">
                 <h2 class="title">Status of Each Valve</h2>
                 <div class="desc">
-                    <div class="row">
-                        <div class="col-lg-3">V1 = Open, </div>
-                        <div class="col-lg-3">V2 = closed, </div>
-                        <div class="col-lg-3">V3 = closed, </div>
-                        <div class="col-lg-3">V4 = closed, </div>
-                        <div class="col-lg-3">V5 = closed, </div>
-                        <div class="col-lg-3">V6 = closed, </div>
-                        <div class="col-lg-3">V7 = closed, </div>
-                        <div class="col-lg-3">V8 = closed, </div>
-                        <div class="col-lg-3">V9 = closed </div>
+                    <div class="row valve-states">
+                        <div class="col-lg-3" data-valveState="1">V1 = closed, </div>
+                        <div class="col-lg-3" data-valveState="2">V2 = closed, </div>
+                        <div class="col-lg-3" data-valveState="3">V3 = closed, </div>
+                        <div class="col-lg-3" data-valveState="4">V4 = closed, </div>
+                        <div class="col-lg-3" data-valveState="5">V5 = closed, </div>
+                        <div class="col-lg-3" data-valveState="6">V6 = closed, </div>
+                        <div class="col-lg-3" data-valveState="7">V7 = closed, </div>
+                        <div class="col-lg-3" data-valveState="8">V8 = closed, </div>
+                        <div class="col-lg-3" data-valveState="9">V9 = closed </div>
                     </div>
                 </div>
             </div>
@@ -122,96 +122,90 @@
                     <h4 class="text-left">Set Valve State <small>Check for open</small></h4>
                     <div class="row">
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-1-checkbox" class="styled" type="checkbox" checked>
-                                    <label for="valve-1-checkbox">
-                                        Valve 1
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-1-checkbox" class="styled" type="checkbox" checked>
+                                <label for="valve-1-checkbox">
+                                    Valve 1
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-2-checkbox" class="styled" type="checkbox" style="margin-left: 30px;">
-                                    <label for="valve-2-checkbox">
-                                        Valve 2
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-2-checkbox" class="styled" type="checkbox" style="margin-left: 30px;">
+                                <label for="valve-2-checkbox">
+                                    Valve 2
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-3-checkbox" class="styled" type="checkbox" >
-                                    <label for="valve-3-checkbox">
-                                        Valve 3
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-3-checkbox" class="styled" type="checkbox" >
+                                <label for="valve-3-checkbox">
+                                    Valve 3
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-4-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-4-checkbox">
-                                        Valve 4
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-4-checkbox" class="styled" type="checkbox">
+                                <label for="valve-4-checkbox">
+                                    Valve 4
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-5-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-5-checkbox">
-                                        Valve 5
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-5-checkbox" class="styled" type="checkbox">
+                                <label for="valve-5-checkbox">
+                                    Valve 5
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-6-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-6-checkbox">
-                                        Valve 6
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-6-checkbox" class="styled" type="checkbox">
+                                <label for="valve-6-checkbox">
+                                    Valve 6
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-7-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-7-checkbox">
-                                        Valve 7
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-7-checkbox" class="styled" type="checkbox">
+                                <label for="valve-7-checkbox">
+                                    Valve 7
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-8-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-8-checkbox">
-                                        Valve 8
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-8-checkbox" class="styled" type="checkbox">
+                                <label for="valve-8-checkbox">
+                                    Valve 8
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div class="form-group pull-left">
-                                <div class="checkbox checkbox-success">
-                                    <input id="valve-9-checkbox" class="styled" type="checkbox">
-                                    <label for="valve-9">
-                                        Valve 9
-                                    </label>
-                                </div>
+                            <div class="checkbox checkbox-success" style="padding-left: 0px;">
+                                <input id="valve-9-checkbox" class="styled" type="checkbox">
+                                <label for="valve-9-checkbox">
+                                    Valve 9
+                                </label>
                             </div>
                         </div>
                     </div>
+                    <div class="row text-left">
+                        <div class="col-lg-12">
+                            <div class="checkbox checkbox-danger">
+                                <input id="valve-vent-check" class="styled" type="checkbox">
+                                <label for="valve-vent-check">
+                                    Allow the system to vent to atmosphere, bewared this can cause serious damage to the system
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row text-left" style="margin-bottom: 10px;"><label id="valve-message" class="error-label"></label></div>
                     <div class="row"><button name="update-valves" id="update-valves" class="action-button pull-left danger" style="width: auto; font-size: 12px; padding-left: 10px; padding-right: 10px; margin-top: -10px; margin-left: 15px;">Update Valves</button></div>
                 </div>
 
@@ -220,6 +214,7 @@
             <div role="tabpanel" class="tab-pane" id="vacuum">
                 <div class="text-left" style="margin-top: 20px; width:100%">
                     <h4>Control Vacuum Station <small>ENSURE THERE IS NO VENT TO AIR</small></h4>
+                    <div class="row text-left"><label id="vac-message" class="error-label"></label></div>
                     <div class="row" style="margin-top: 20px;">
                         <button name="vac-pump-" id="vac-pump" class="action-button pull-left danger btn-form">Turn Vacuum Station ON</button>
                         <button name="vac-pump-turbo" id="vac-pump-turbo" class="action-button pull-left btn-form">Disable Turbo Pump</button>
@@ -231,17 +226,19 @@
                 <div class="text-left row" style="margin-top: 20px;">
                     <div class="col-lg-6">
                         <h4>Set Flow Rate (1)</h4>
-                        <div class="row" style="margin-top: 10px;">
-                            <input type="text" name="flow_rate_1" id="flow_rate_1" placeholder="0" class="osk-trigger" style="margin-left: 15px; margin-bottom: 15px; width: 50%;"/><br/>
-                            <button name="update-valves" class="action-button pull-left btn-form" style="">Set Flow Rate</button>
-                        </div>
+                        <form class="row" style="margin-top: 10px;" id="flow_1_container">
+                            <input type="text" name="flow_1_inp" id="flow_1_inp" placeholder="0" class="osk-trigger" style="margin-left: 15px; width: 50%; margin-bottom: 0px"/><br/>
+                            <label id="flow_1_inp-error" class="error error-label" for="flow_1_inp"></label>
+                            <button name="flow-rate-1-btn" id="flow-rate-1-btn" class="action-button pull-left btn-form" style="margin-top: 5px;">Set Flow Rate</button>
+                        </form>
                     </div>
                     <div class="col-lg-6">
                         <h4>Set Flow Rate (2)</h4>
-                        <div class="row" style="margin-top: 10px;">
-                            <input type="text" name="flow_rate_2" id="flow_rate_2" placeholder="0" class="osk-trigger" style="margin-left: 15px; margin-bottom: 15px; width: 50%;"/><br/>
-                            <button name="update-valves" class="action-button pull-left btn-form" style="">Set Flow Rate</button>
-                        </div>
+                        <form class="row" style="margin-top: 10px;" id="flow_2_container">
+                            <input type="text" name="flow_2_inp" id="flow_2_inp" placeholder="0" class="osk-trigger" style="margin-left: 15px; width: 50%; margin-bottom: 0px"/><br/>
+                            <label id="flow_2_inp-error" class="error error-label" for="flow_2_inp"></label>
+                            <button name="flow-rate-2-btn" id="flow-rate-2-btn" class="action-button pull-left btn-form" style="margin-top: 5px;">Set Flow Rate</button>
+                        </form>
                     </div>
                 </div>
             </div>
