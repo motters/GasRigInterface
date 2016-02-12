@@ -3,6 +3,19 @@
 
 var labview_communicator = {
 
+    settings: {},
+
+    /**
+     * Init the labview communicator
+     */
+    init: function()
+    {
+        // Load the configuration file
+        $.getJSON( "/settings/labview-communicator.json", function(data){
+            labview_communicator.settings = data;
+        });
+    },
+
     /**
      * Read the set flow rate for the flow controller
      */
@@ -63,7 +76,7 @@ var labview_communicator = {
      */
     flowRate: function(id)
     {
-        return Math.floor(Math.random() * 6) + 1;
+        return labview_communicator.submit('retrieve', 'flow', {"id": id});
     },
 
     /**
@@ -108,10 +121,27 @@ var labview_communicator = {
         return 1;
     },
 
-    submit: function()
+    /**
+     * Send data and retrieve data from labview
+     *
+     * @param direction retrieve|send
+     * @param type data type (within the labview communicator config file)
+     * @param data (data to send to labview)
+     * @returns {*}
+     */
+    submit: function(direction, type, data)
     {
-        //$.post( "http://127.0.0.1:8080/GasRig/set/valve_config", { valveHash: "0,0,0,0,0,0,0,0,0", csfr: "poiuytrewqadfghjklmnb" } );
-        $.post( "http://127.0.0.1:8080/GasRig/set/valve_config", { valveHash: "0,58,1,0,0,0,0,0,0", csfr: "poiuytrewqadfghjklmnb" }).done(function( data ) { alert( "Data Loaded: " + data ); });
+        // Set some vars
+        var settings = labview_communicator.settings;
+        data['csrf'] = 'A Value determined by lab view on page load';
+
+        // If settings set a post request; get request will go unsupported for now
+        if(settings["method"] == "POST")
+        {
+            return $.post( settings["url"] + settings[direction][type], data).done(function( dataReturn ) {
+                console.log(dataReturn);
+            });
+        }
     }
 }
 

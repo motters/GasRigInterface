@@ -58,7 +58,7 @@ var testing_maintenance = {
                 if(testing_maintenance.vent){ $("#vent-box-message").text("Possible vent to air").addClass("error-label"); }else{ $("#vent-box-message").text("No venting to air with current valve setup.").removeClass("error-label");}
                 // success message
                 $("#valve-message").text("Valves were successfully updated.").addClass("txt-success");
-                $('#valve-vent-check').prop('checked', false);t
+                $('#valve-vent-check').prop('checked', false);
             }else{
                 // failed message
                 $("#valve-message").text("Valves could not be updated.").removeClass("txt-success");

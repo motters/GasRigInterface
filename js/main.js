@@ -17,6 +17,9 @@ var UI = {
 
         // Check for when the user select there usage
         UI.selectedUsage();
+
+        // Init the labview communicator
+        labview_communicator.init();
     },
 
     selectedUsage: function()
